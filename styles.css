@@ -21,9 +21,9 @@ body{
 .float { 
     position: absolute;
     width: 100%;
-    height: 150%;
-    top: 10px;
-    left: 100px;
+    height: 220%;
+    top: -50px;
+    left: 40px;
     background: linear-gradient(#f0f, #f00);
     clip-path: circle(16% at 25% 30%);
     animation-name: floating;
@@ -37,9 +37,9 @@ body{
 .float2{ 
     position: absolute;
     width: 100%;
-    height: 100%;
-    top: 100px;
-    left: -50px;
+    height: 190%;
+    top: 70px;
+    left: -70px;
     background: linear-gradient(#e91e63, #2196f3);
     clip-path: circle(16% at 70% 65%);
     animation: floating2 4s linear infinite;
@@ -49,8 +49,12 @@ body{
 }
 
 @keyframes floating {
-    from {transform: rotate(0deg) translateX(150px) rotate(0deg); }
-    to   {transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+    0%, 100% {
+        transform: translateY(0);
+    }
+      50% {
+        transform: translateY(-100px);
+    }
 }
 
 @keyframes floating2 {
@@ -250,3 +254,26 @@ span{
     position: fixed;
     z-index: 100;
 }
+
+@media only screen and (max-width: 375px) {
+    .float { 
+        width: 100%;
+        height: 120%;
+        top: -50px;
+        left: -40px;
+        margin-left: 30px;
+        margin-top: 5px;
+    }
+    
+    .float2{ 
+        width: 100%;
+        height: 100%;
+        top: 70px;
+        left: -30px;
+        margin-left: 30px;
+        margin-top: 5px;
+    }
+    
+    
+}
+
